@@ -4,15 +4,17 @@ option java_multiple_files = true;
 option java_package = "service";
 package service;
 
+// Input của Service
 message HelloRequest {
   string firstName = 1;
   string lastName = 2;
 }
 
+// Output của Service
 message HelloResponse {
   string greeting = 1;
 }
-
+// Khai báo các dịch vụ của Service
 service HelloService {
   rpc hello(HelloRequest) returns (HelloResponse);
 }

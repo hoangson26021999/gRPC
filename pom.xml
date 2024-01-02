@@ -7,9 +7,14 @@
     <groupId>Sondh</groupId>
     <artifactId>gRPC</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <properties> <java.version>11</java.version></properties>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
@@ -48,9 +53,11 @@
                     <pluginArtifact>
                         io.grpc:protoc-gen-grpc-java:1.4.0:exe:${os.detected.classifier}
                     </pluginArtifact>
-<!--                    <outputBaseDirectory>src/main/java/</outputBaseDirectory>-->
-<!--                    <outputDirectory>src/main/java/service</outputDirectory>-->
-<!--                    <clearOutputDirectory>false</clearOutputDirectory>-->
+                    <!--                    <outputBaseDirectory>src/main/java/</outputBaseDirectory>-->
+                    <!-- Lệnh trong trường hợp gen lại proto sẽ xóa toàn bộ file trong thư mục -->
+                    <!--                    <outputDirectory>src/main/java/service</outputDirectory>-->
+                    <!-- Lệnh trong trường hợp gen lại proto sẽ xóa toàn bộ file trong thư mục -->
+                    <!--                    <clearOutputDirectory>false</clearOutputDirectory>-->
                 </configuration>
                 <executions>
                     <execution>
